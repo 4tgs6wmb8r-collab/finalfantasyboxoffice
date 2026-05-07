@@ -397,3 +397,173 @@ h1 {
   font-size: 13px;
   color: #555;
 }
+
+@media (max-width: 1100px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .sidebar h3 {
+    grid-column: span 1;
+    margin: 0 0 -10px;
+    text-align: left;
+  }
+
+  .side-card {
+    margin-bottom: 8px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .top-nav {
+    height: auto;
+    min-height: 56px;
+    padding: 14px 18px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .chart-placeholder {
+    padding: 16px;
+  }
+
+  .chart-row {
+    grid-template-columns: 1fr 64px;
+    gap: 8px 12px;
+    padding: 12px 0;
+  }
+
+  .chart-row span {
+    font-weight: bold;
+  }
+
+  .chart-bar-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .chart-row strong {
+    align-self: start;
+  }
+
+  .sidebar {
+    display: block;
+    order: 2;
+  }
+
+  .main-content {
+    display: contents;
+  }
+
+  #scoreChart {
+    order: 1;
+  }
+
+  #teamsContainer {
+    order: 3;
+  }
+
+  .sidebar h3 {
+    margin: 18px 0 8px;
+    text-align: left;
+  }
+
+  .team-card {
+    padding: 14px;
+  }
+
+  .team-header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .team-header h2 {
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .score-total strong {
+    font-size: 21px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .poster-placeholder,
+  .movie-poster {
+    height: 185px;
+  }
+
+  .side-row {
+    align-items: flex-start;
+  }
+
+  .side-row span {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .page {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .team-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .score-total {
+    text-align: left;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-placeholder,
+  .movie-poster {
+    height: 260px;
+  }
+
+  .side-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .side-row strong {
+    white-space: normal;
+  }
+}
