@@ -453,14 +453,22 @@ function renderScoreChart() {
   const largestTotal = Math.max(...totals.map((studio) => Math.abs(studio.total)), 1);
 
   scoreChart.innerHTML = totals.map((studio, index) => {
-    const width = Math.max((Math.abs(studio.total) / largestTotal) * 100, 4);
+    const width = Math.max((Math.abs(studio.total) / largestTotal) * 100, studio.total === 0 ? 0 : 4);
     const delay = index * 120;
+    const sideClass = studio.total < 0 ? "negative-chart-bar" : "positive-chart-bar";
+    const colorClassName = studio.total < 0 ? "" : colorClass("bar", studio.colorClass);
 
     return `
       <div class="chart-row">
         <span>${studio.name}</span>
-        <div class="chart-bar-track">
-          <div class="chart-bar ${colorClass("bar", studio.colorClass)}" style="width: ${width}%; animation-delay: ${delay}ms"></div>
+        <div class="chart-bar-track split-chart-track">
+          <div class="chart-half chart-half-negative">
+            ${studio.total < 0 ? `<div class="chart-bar ${sideClass}" style="width: ${width}%; animation-delay: ${delay}ms"></div>` : ""}
+          </div>
+          <div class="chart-zero-line"></div>
+          <div class="chart-half chart-half-positive">
+            ${studio.total >= 0 ? `<div class="chart-bar ${sideClass} ${colorClassName}" style="width: ${width}%; animation-delay: ${delay}ms"></div>` : ""}
+          </div>
         </div>
         <strong>${Math.round(studio.total * 10) / 10}M</strong>
       </div>
