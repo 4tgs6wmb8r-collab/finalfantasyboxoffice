@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6f4;
+  color: #222;
+}
+
+.top-nav {
+  height: 64px;
+  background: #1f4a2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 28px;
+  font-weight: bold;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  padding: 36px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.chart-placeholder {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #222;
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 70px;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.chart-row span,
+.chart-row strong {
+  font-size: 14px;
+}
+
+.chart-row strong {
+  text-align: right;
+}
+
+.chart-bar-track {
+  height: 14px;
+  background: #eef0ee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.chart-bar {
+  height: 100%;
+  background: #2f9b9b;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: grow-score-bar 900ms cubic-bezier(0.2, 0.9, 0.25, 1.15) forwards;
+}
+
+@keyframes grow-score-bar {
+  0% {
+    transform: scaleX(0);
+  }
+
+  70% {
+    transform: scaleX(1.03);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.pink-bar {
+  background: #d85b8c;
+}
+
+.green-bar {
+  background: #4f9a55;
+}
+
+.blue-bar {
+  background: #5f7f9f;
+}
+
+.red-bar {
+  background: #c2644f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-bar {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+.commissioner-note {
+  background: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+}
+
+.commissioner-note p {
+  margin: 8px 0 0;
+}
+
+.team-card {
+  background: #eefafa;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.team-card + .team-card {
+  margin-top: 24px;
+}
+
+.pink-card {
+  background: #fff0f6;
+}
+
+.green-card {
+  background: #f0faef;
+}
+
+.blue-card {
+  background: #f1f6fb;
+}
+
+.red-card {
+  background: #fff4ef;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.team-header p {
+  margin: 4px 0 0;
+  color: #278787;
+}
+
+.score-total {
+  text-align: right;
+}
+
+.score-total span {
+  display: block;
+  color: #278787;
+}
+
+.score-total strong {
+  font-size: 24px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.movie-card {
+  background: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.poster-placeholder {
+  height: 220px;
+  background: linear-gradient(135deg, #ddd, #aaa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-weight: bold;
+}
+
+.movie-poster {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.movie-date,
+.movie-score {
+  margin: 8px;
+  font-size: 14px;
+}
+
+.negative {
+  color: #c0392b;
+}
+
+.positive {
+  color: #1f7a45;
+}
+
+.sidebar h3 {
+  text-align: center;
+  color: #888;
+  margin-top: 0;
+}
+
+.side-card {
+  background: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 22px;
+}
+
+.side-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.side-row strong {
+  white-space: nowrap;
+}
+
+.side-row:last-child {
+  border-bottom: none;
+}
+
+.value-positive {
+  color: #1f7a45;
+}
+
+.value-strong {
+  color: #0f8f5f;
+}
+
+.value-warning {
+  color: #b7791f;
+}
+
+.value-negative {
+  color: #c0392b;
+}
+
+.value-muted {
+  color: #666;
+}
+
+.movie-info {
+  padding: 8px;
+}
+
+.movie-title {
+  margin: 0 0 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.movie-budget,
+.movie-breakeven,
+.movie-earnings {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.studio-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.studio-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2f9b9b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.pink-avatar {
+  background: #d85b8c;
+}
+
+.green-avatar {
+  background: #4f9a55;
+}
+
+.blue-avatar {
+  background: #5f7f9f;
+}
+
+.red-avatar {
+  background: #c2644f;
+}
+
+.owner-name {
+  margin: 4px 0 0;
+  color: #278787;
+}
+
+.pink-text,
+.pink-text span {
+  color: #b83d70;
+}
+
+.team-header .pink-text {
+  color: #b83d70;
+}
+
+.green-text,
+.green-text span {
+  color: #3f7f45;
+}
+
+.team-header .green-text {
+  color: #3f7f45;
+}
+
+.blue-text,
+.blue-text span {
+  color: #4f6f8f;
+}
+
+.team-header .blue-text {
+  color: #4f6f8f;
+}
+
+.red-text,
+.red-text span {
+  color: #a94f3f;
+}
+
+.team-header .red-text {
+  color: #a94f3f;
+}
+
+.movie-info {
+  padding: 8px;
+}
+
+.movie-title {
+  margin: 0 0 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.movie-budget,
+.movie-earnings {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fantasy Box Office</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="logo">Fantasy Box Office</div>
+  </header>
+
+  <main class="page">
+    <section class="main-content">
+      <h1>Cousin Fantasy Box Office</h1>
+
+      <div class="chart-placeholder" id="scoreChart">
+        Loading scores...
+      </div>
+
+      <div id="teamsContainer"></div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>This Weekend's Projections</h3>
+      <div class="side-card" id="weeklyProjections"></div>
+
+      <h3>Upcoming Releases</h3>
+      <div class="side-card" id="upcomingReleases"></div>
+
+      <h3>Top Performers</h3>
+      <div class="side-card" id="topPerformers"></div>
+
+      <h3>Best ROI</h3>
+      <div class="side-card" id="bestRoi"></div>
+
+      <h3>Closest to Breakeven</h3>
+      <div class="side-card" id="closestBreakeven"></div>
+
+      <h3>Biggest Bombs</h3>
+      <div class="side-card" id="biggestBombs"></div>
+    </aside>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
